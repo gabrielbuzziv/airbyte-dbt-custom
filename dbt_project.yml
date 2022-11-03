@@ -1,0 +1,51 @@
+name: airbyte_utils
+version: '1.0'
+config-version: 2
+profile: normalize
+model-paths:
+- models
+docs-paths:
+- docs
+analysis-paths:
+- analysis
+test-paths:
+- tests
+seed-paths:
+- data
+macro-paths:
+- macros
+target-path: ../build
+log-path: ../logs
+packages-install-path: /dbt
+clean-targets:
+- build
+- dbt_modules
+quoting:
+  database: true
+  schema: false
+  identifier: true
+models:
+  airbyte_utils:
+    +materialized: table
+    generated:
+      airbyte_ctes:
+        +tags: airbyte_internal_cte
+        +materialized: ephemeral
+      airbyte_incremental:
+        +tags: incremental_tables
+        +materialized: table
+      airbyte_tables:
+        +tags: normalized_tables
+        +materialized: table
+      airbyte_views:
+        +tags: airbyte_internal_views
+        +materialized: view
+vars:
+  dbt_utils_dispatch_list:
+  - airbyte_utils
+  json_column: _airbyte_data
+  models_to_source:
+    airbyte_categories_ab1: airbyte._airbyte_raw_airbyte_categories
+    airbyte_categories_ab2: airbyte._airbyte_raw_airbyte_categories
+    airbyte_categories_ab3: airbyte._airbyte_raw_airbyte_categories
+    airbyte_categories: airbyte._airbyte_raw_airbyte_categories

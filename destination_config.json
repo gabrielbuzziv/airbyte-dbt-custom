@@ -1,0 +1,1 @@
+{"ssl":false,"host":"0.0.0.0","port":3306,"database":"airbyte","password":"mysql","username":"root","tunnel_method":{"tunnel_method":"NO_TUNNEL"}}
