@@ -7,7 +7,10 @@
 -- depends_on: {{ ref('airbyte_categories_ab3') }}
 select
     id,
+    {{ adapter.quote('type') }},
     title,
+    icon_id,
+    parent_id,
     created_at,
     is_enabled,
     updated_at,
