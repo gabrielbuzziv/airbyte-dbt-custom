@@ -1,0 +1,68 @@
+{{ config(
+    indexes = [{'columns':['_airbyte_emitted_at'],'type':'btree'}],
+    unique_key = '_airbyte_ab_id',
+    schema = "_airbyte_public",
+    tags = [ "top-level-intermediate" ]
+) }}
+-- SQL model to build a hash column based on the values of this record
+-- depends_on: {{ ref('users_ab2') }}
+select
+    {{ dbt_utils.surrogate_key([
+        adapter.quote('id'),
+        'city',
+        adapter.quote('name'),
+        'slug',
+        'about',
+        'cover',
+        'email',
+        'phone',
+        adapter.quote('state'),
+        adapter.quote('token'),
+        'avatar',
+        'github',
+        'status',
+        'utm_id',
+        'country',
+        'discord',
+        boolean_to_string('pioneer'),
+        'twitter',
+        'apple_id',
+        adapter.quote('document'),
+        'linkedin',
+        'og_image',
+        adapter.quote('password'),
+        'timezone',
+        'utm_term',
+        boolean_to_string('verified'),
+        'github_id',
+        boolean_to_string('onboarded'),
+        'blocked_at',
+        'company_id',
+        'created_at',
+        'discord_id',
+        boolean_to_string('has_credit'),
+        boolean_to_string('is_visible'),
+        'last_login',
+        'occupation',
+        'station_id',
+        'updated_at',
+        'utm_medium',
+        'utm_source',
+        'utm_content',
+        'company_name',
+        'github_token',
+        'utm_campaign',
+        'utm_saved_at',
+        'subscriber_id',
+        'blocked_status',
+        'recovery_token',
+        boolean_to_string('onboarded_hubble'),
+        'token_created_at',
+        'registration_token',
+        boolean_to_string('use_shipping_as_billing'),
+    ]) }} as _airbyte_users_hashid,
+    tmp.*
+from {{ ref('users_ab2') }} tmp
+-- users
+where 1 = 1
+

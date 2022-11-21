@@ -49,7 +49,8 @@ dispatch:
 vars:
   json_column: _airbyte_data
   models_to_source:
-    members_ab1: public._airbyte_raw_users
-    members_ab2: public._airbyte_raw_users
-    members_ab3: public._airbyte_raw_users
-    members: public._airbyte_raw_users
+    users_ab1: public._airbyte_raw_users
+    users_ab2: public._airbyte_raw_users
+    users_ab3: public._airbyte_raw_users
+    users: public._airbyte_raw_users
+    teste: public._airbyte_raw_users
