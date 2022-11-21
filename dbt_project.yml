@@ -53,3 +53,7 @@ vars:
     users_ab2: public._airbyte_raw_users
     users_ab3: public._airbyte_raw_users
     users: public._airbyte_raw_users
+    members_ab1: public._airbyte_raw_members
+    members_ab2: public._airbyte_raw_members
+    members_ab3: public._airbyte_raw_members
+    members: public._airbyte_raw_members
