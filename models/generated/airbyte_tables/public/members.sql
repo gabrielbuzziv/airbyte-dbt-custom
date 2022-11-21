@@ -8,8 +8,15 @@
 -- depends_on: {{ ref('users_ab3') }}
 select
     {{ adapter.quote('id') }},
+    {{ adapter.quote('id') }} as atlas_user_id,
     {{ adapter.quote('name') }},
     slug,
+    about,
+    avatar as avatar_url,
+    company_id as company,
+    occupation,
+    created_at,
+    updated_at,
     _airbyte_ab_id,
     _airbyte_emitted_at,
     {{ current_timestamp() }} as _airbyte_normalized_at,
