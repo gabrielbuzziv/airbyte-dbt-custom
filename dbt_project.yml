@@ -53,3 +53,4 @@ vars:
     users_ab2: public._airbyte_raw_users
     users_ab3: public._airbyte_raw_users
     users: public._airbyte_raw_users
+    teste: public._airbyte_raw_users
