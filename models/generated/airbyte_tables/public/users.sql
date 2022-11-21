@@ -8,16 +8,15 @@
 -- depends_on: {{ ref('users_ab3') }}
 select
     {{ adapter.quote('id') }},
-    {{ adapter.quote('atlas_user_id') }},
+    {{ adapter.quote('id') }} as atlas_user_id,
     {{ adapter.quote('name') }},
     slug,
     about,
-    avatar_url,
-    company_id,
-    occupation,
+    avatar as avatar_url,
+    company_id as company,
     created_at,
+    occupation,
     updated_at,
 from {{ ref('members_ab3') }}
--- users from {{ source('public', '_airbyte_raw_users') }}
 where 1 = 1
 
