@@ -22,7 +22,7 @@ select
     _airbyte_emitted_at,
     {{ current_timestamp() }} as _airbyte_normalized_at,
     _airbyte_airbyte_users_hashid
-from {{ ref('airbyte_plans_subscription_ab3') }} ps
+from {{ ref('airbyte_plan_subscriptions_ab3') }} ps
     inner join plans p on p.id = ps.plan_id
     inner join users u on ps.user_id = u.id
 where
