@@ -52,13 +52,10 @@ vars:
     airbyte_plan_subscriptions_ab1: public._airbyte_raw_airbyte_plan_subscriptions
     airbyte_plan_subscriptions_ab2: public._airbyte_raw_airbyte_plan_subscriptions
     airbyte_plan_subscriptions_ab3: public._airbyte_raw_airbyte_plan_subscriptions
-    airbyte_plan_subscriptions: public._airbyte_raw_airbyte_plan_subscriptions
     airbyte_plans_ab1: public._airbyte_raw_airbyte_plans
     airbyte_plans_ab2: public._airbyte_raw_airbyte_plans
     airbyte_plans_ab3: public._airbyte_raw_airbyte_plans
-    airbyte_plans: public._airbyte_raw_airbyte_plans
     airbyte_users_ab1: public._airbyte_raw_airbyte_users
     airbyte_users_ab2: public._airbyte_raw_airbyte_users
     airbyte_users_ab3: public._airbyte_raw_airbyte_users
-    airbyte_users: public._airbyte_raw_airbyte_users
-    teste: public._airbyte_raw_airbyte_plans
+    creators: public._airbyte_raw_airbyte_plans
