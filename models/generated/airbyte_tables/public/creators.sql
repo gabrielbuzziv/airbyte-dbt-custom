@@ -16,7 +16,11 @@ select
     u.occupation,
     u.about,
     u.created_at,
-    u.updated_at
+    u.updated_at,
+    _airbyte_ab_id,
+    _airbyte_emitted_at,
+    {{ current_timestamp() }} as _airbyte_normalized_at,
+    _airbyte_airbyte_plan_subscriptions_hashid
 from {{ ref('airbyte_plan_subscriptions_ab3') }} ps
     inner join {{ ref('airbyte_plans_ab3') }} p on p.id = ps.plan_id
     inner join {{ ref('airbyte_users_ab3') }} u on ps.user_id = u.id
