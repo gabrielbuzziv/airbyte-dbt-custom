@@ -18,7 +18,8 @@ with plans as (
         canceled,
         active,
         ends_at,
-        plan_id
+        plan_id,
+        user_id
     from {{ ref('airbyte_plan_subscriptions_ab3') }}
 ),
 users as (
