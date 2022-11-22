@@ -58,4 +58,4 @@ where
     and plan_id = 'd9648630-7d8f-418a-be27-285f9e7d4c0f'
     and ps.canceled is false
     and ps.active is true
-    and ps.ends_at > now();
+    and ps.ends_at > now()
