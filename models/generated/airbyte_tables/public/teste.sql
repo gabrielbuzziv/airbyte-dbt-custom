@@ -23,8 +23,8 @@ with plans as (
 ),
 users as (
     select
-        {{ adapter.quote('id') }},,
-        {{ adapter.quote('name') }},,
+        {{ adapter.quote('id') }},
+        {{ adapter.quote('name') }},
         slug,
         avatar,
         company_name,
