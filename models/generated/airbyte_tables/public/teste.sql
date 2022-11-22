@@ -18,11 +18,7 @@ with plans as (
 
 select
     {{ adapter.quote('id') }},
-    {{ adapter.quote('type') }} as tipo_do_plano,
-    _airbyte_ab_id,
-    _airbyte_emitted_at,
-    {{ current_timestamp() }} as _airbyte_normalized_at,
-    _airbyte_airbyte_plans_hashid
+    {{ adapter.quote('type') }} as tipo_do_plano
 from plans
 where title = 'ExpertsClub - Creators'
 
