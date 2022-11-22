@@ -6,23 +6,6 @@ sources:
     schema: false
     identifier: false
   tables:
-  - name: _airbyte_raw_airbyte_creator_feedback_status
-  - name: _airbyte_raw_airbyte_creator_feedbacks
-  - name: _airbyte_raw_airbyte_lesson_downloads
-  - name: _airbyte_raw_airbyte_lesson_history_feedback_stars
-  - name: _airbyte_raw_airbyte_lesson_history_feedbacks
-  - name: _airbyte_raw_airbyte_lesson_history_impression
-  - name: _airbyte_raw_airbyte_lesson_history_lesson_history_tags
-  - name: _airbyte_raw_airbyte_lesson_history_sections
-  - name: _airbyte_raw_airbyte_lesson_history_tag_users
-  - name: _airbyte_raw_airbyte_lesson_history_tags
-  - name: _airbyte_raw_airbyte_lesson_list_lessons
-  - name: _airbyte_raw_airbyte_lesson_lists
   - name: _airbyte_raw_airbyte_plan_subscriptions
   - name: _airbyte_raw_airbyte_plans
-  - name: _airbyte_raw_airbyte_playlist_lessons
-  - name: _airbyte_raw_airbyte_playlists
-  - name: _airbyte_raw_airbyte_technologies
-  - name: _airbyte_raw_airbyte_user_followers
-  - name: _airbyte_raw_airbyte_user_technologies
   - name: _airbyte_raw_airbyte_users
