@@ -61,3 +61,4 @@ vars:
     airbyte_users_ab2: public._airbyte_raw_airbyte_users
     airbyte_users_ab3: public._airbyte_raw_airbyte_users
     airbyte_users: public._airbyte_raw_airbyte_users
+    teste: public._airbyte_raw_airbyte_plans
