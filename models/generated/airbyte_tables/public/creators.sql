@@ -4,59 +4,59 @@
     schema = "public",
     tags = [ "top-level" ]
 ) }}
--- Final base SQL model
--- depends_on: {{ ref('airbyte_plan_subscriptions_ab3') }}
 
 
-with plans as (
-    select
-        {{ adapter.quote('id') }},
-        {{ adapter.quote('type') }}
-    from {{ ref('airbyte_plans_ab3') }}
-), plan_subscriptions as (
-    select
-        canceled,
-        active,
-        ends_at,
-        plan_id,
-        user_id
-    from {{ ref('airbyte_plan_subscriptions_ab3') }}
+WITH users AS (
+  SELECT
+    {{ adapter.quote('id') }},
+    {{ adapter.quote('name') }},
+    slug,
+    avatar,
+    company_name,
+    occupation,
+    about,
+    created_at,
+    updated_at
+  FROM {{ ref('airbyte_users_ab3') }}
 ),
-users as (
-    select
-        {{ adapter.quote('id') }},
-        {{ adapter.quote('name') }},
-        slug,
-        avatar,
-        company_name,
-        occupation,
-        about,
-        created_at,
-        updated_at
-    from {{ ref('airbyte_users_ab3') }}
+plan_subscriptions AS (
+  SELECT
+    user_id,
+    plan_id,
+    canceled,
+    active,
+    ends_at,
+  FROM {{ ref('airbyte_plan_subscriptions_ab3') }}
+),
+plans AS (
+  SELECT
+    {{ adapter.quote('id') }},
+    {{ adapter.quote('type') }},
+  FROM {{ ref('airbyte_plans_ab3') }}
 )
 
-select
+SELECT
     u.id,
     u.id as atlas_user_id,
     u.name,
     u.slug,
-    concat('https://xesque.rocketseat.dev/users/avatar/', u.avatar) as avatar_url,
+    CONCAT('https://xesque.rocketseat.dev/users/avatar/', u.avatar) as avatar_url,
     u.company_name as company,
     u.occupation,
     u.about,
     u.created_at,
     u.updated_at,
     gen_random_uuid() as _airbyte_ab_id,
-    {{ current_timestamp() }} as _airbyte_emitted_at,
+    _airbyte_emitted_at,
     {{ current_timestamp() }} as _airbyte_normalized_at,
-    gen_random_uuid()::text as _airbyte_airbyte_users_hashid
-from plan_subscriptions ps
-    inner join plans p on p.id = ps.plan_id
-    inner join users u on ps.user_id = u.id
-where
+    gen_random_uuid() as _airbyte_creators_hashid
+FROM plan_subscriptions ps
+    INNER JOIN plans p ON p.id = ps.plan_id
+    INNER JOIN users u ON ps.user_id = u.id
+WHERE
     p.type = 'expertsclub'
-    and plan_id = 'd9648630-7d8f-418a-be27-285f9e7d4c0f'
-    and ps.canceled is false
-    and ps.active is true
-    and ps.ends_at > now()
+    AND plan_id = '77053ad2-b904-48bc-921f-decc7ee82638'
+    AND ps.canceled is false
+    AND ps.active is true
+    AND ps.ends_at > now();
+

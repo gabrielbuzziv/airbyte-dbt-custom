@@ -49,13 +49,89 @@ dispatch:
 vars:
   json_column: _airbyte_data
   models_to_source:
+    airbyte_creator_feedback_status_ab1: public._airbyte_raw_airbyte_creator_feedback_status
+    airbyte_creator_feedback_status_ab2: public._airbyte_raw_airbyte_creator_feedback_status
+    airbyte_creator_feedback_status_ab3: public._airbyte_raw_airbyte_creator_feedback_status
+    airbyte_creator_feedback_status: public._airbyte_raw_airbyte_creator_feedback_status
+    airbyte_creator_feedbacks_ab1: public._airbyte_raw_airbyte_creator_feedbacks
+    airbyte_creator_feedbacks_ab2: public._airbyte_raw_airbyte_creator_feedbacks
+    airbyte_creator_feedbacks_ab3: public._airbyte_raw_airbyte_creator_feedbacks
+    airbyte_creator_feedbacks: public._airbyte_raw_airbyte_creator_feedbacks
+    airbyte_lesson_downloads_ab1: public._airbyte_raw_airbyte_lesson_downloads
+    airbyte_lesson_downloads_ab2: public._airbyte_raw_airbyte_lesson_downloads
+    airbyte_lesson_downloads_ab3: public._airbyte_raw_airbyte_lesson_downloads
+    airbyte_lesson_downloads: public._airbyte_raw_airbyte_lesson_downloads
+    airbyte_lesson_history_ab1: public._airbyte_raw_airbyte_lesson_history
+    airbyte_lesson_history_ab2: public._airbyte_raw_airbyte_lesson_history
+    airbyte_lesson_history_ab3: public._airbyte_raw_airbyte_lesson_history
+    airbyte_lesson_history: public._airbyte_raw_airbyte_lesson_history
+    airbyte_lesson_history_feedback_stars_ab1: public._airbyte_raw_airbyte_lesson_history_feedback_stars
+    airbyte_lesson_history_feedback_stars_ab2: public._airbyte_raw_airbyte_lesson_history_feedback_stars
+    airbyte_lesson_history_feedback_stars_ab3: public._airbyte_raw_airbyte_lesson_history_feedback_stars
+    airbyte_lesson_history_feedback_stars: public._airbyte_raw_airbyte_lesson_history_feedback_stars
+    airbyte_lesson_history_feedbacks_ab1: public._airbyte_raw_airbyte_lesson_history_feedbacks
+    airbyte_lesson_history_feedbacks_ab2: public._airbyte_raw_airbyte_lesson_history_feedbacks
+    airbyte_lesson_history_feedbacks_ab3: public._airbyte_raw_airbyte_lesson_history_feedbacks
+    airbyte_lesson_history_feedbacks: public._airbyte_raw_airbyte_lesson_history_feedbacks
+    airbyte_lesson_history_impression_ab1: public._airbyte_raw_airbyte_lesson_history_impression
+    airbyte_lesson_history_impression_ab2: public._airbyte_raw_airbyte_lesson_history_impression
+    airbyte_lesson_history_impression_ab3: public._airbyte_raw_airbyte_lesson_history_impression
+    airbyte_lesson_history_impression: public._airbyte_raw_airbyte_lesson_history_impression
+    airbyte_lesson_history_lesson_history_tags_ab1: public._airbyte_raw_airbyte_lesson_history_lesson_history_tags
+    airbyte_lesson_history_lesson_history_tags_ab2: public._airbyte_raw_airbyte_lesson_history_lesson_history_tags
+    airbyte_lesson_history_lesson_history_tags_ab3: public._airbyte_raw_airbyte_lesson_history_lesson_history_tags
+    airbyte_lesson_history_lesson_history_tags: public._airbyte_raw_airbyte_lesson_history_lesson_history_tags
+    airbyte_lesson_history_sections_ab1: public._airbyte_raw_airbyte_lesson_history_sections
+    airbyte_lesson_history_sections_ab2: public._airbyte_raw_airbyte_lesson_history_sections
+    airbyte_lesson_history_sections_ab3: public._airbyte_raw_airbyte_lesson_history_sections
+    airbyte_lesson_history_sections: public._airbyte_raw_airbyte_lesson_history_sections
+    airbyte_lesson_history_tag_users_ab1: public._airbyte_raw_airbyte_lesson_history_tag_users
+    airbyte_lesson_history_tag_users_ab2: public._airbyte_raw_airbyte_lesson_history_tag_users
+    airbyte_lesson_history_tag_users_ab3: public._airbyte_raw_airbyte_lesson_history_tag_users
+    airbyte_lesson_history_tag_users: public._airbyte_raw_airbyte_lesson_history_tag_users
+    airbyte_lesson_history_tags_ab1: public._airbyte_raw_airbyte_lesson_history_tags
+    airbyte_lesson_history_tags_ab2: public._airbyte_raw_airbyte_lesson_history_tags
+    airbyte_lesson_history_tags_ab3: public._airbyte_raw_airbyte_lesson_history_tags
+    airbyte_lesson_history_tags: public._airbyte_raw_airbyte_lesson_history_tags
+    airbyte_lesson_list_lessons_ab1: public._airbyte_raw_airbyte_lesson_list_lessons
+    airbyte_lesson_list_lessons_ab2: public._airbyte_raw_airbyte_lesson_list_lessons
+    airbyte_lesson_list_lessons_ab3: public._airbyte_raw_airbyte_lesson_list_lessons
+    airbyte_lesson_list_lessons: public._airbyte_raw_airbyte_lesson_list_lessons
+    airbyte_lesson_lists_ab1: public._airbyte_raw_airbyte_lesson_lists
+    airbyte_lesson_lists_ab2: public._airbyte_raw_airbyte_lesson_lists
+    airbyte_lesson_lists_ab3: public._airbyte_raw_airbyte_lesson_lists
+    airbyte_lesson_lists: public._airbyte_raw_airbyte_lesson_lists
     airbyte_plan_subscriptions_ab1: public._airbyte_raw_airbyte_plan_subscriptions
     airbyte_plan_subscriptions_ab2: public._airbyte_raw_airbyte_plan_subscriptions
     airbyte_plan_subscriptions_ab3: public._airbyte_raw_airbyte_plan_subscriptions
+    airbyte_plan_subscriptions: public._airbyte_raw_airbyte_plan_subscriptions
     airbyte_plans_ab1: public._airbyte_raw_airbyte_plans
     airbyte_plans_ab2: public._airbyte_raw_airbyte_plans
     airbyte_plans_ab3: public._airbyte_raw_airbyte_plans
+    airbyte_plans: public._airbyte_raw_airbyte_plans
+    airbyte_playlist_lessons_ab1: public._airbyte_raw_airbyte_playlist_lessons
+    airbyte_playlist_lessons_ab2: public._airbyte_raw_airbyte_playlist_lessons
+    airbyte_playlist_lessons_ab3: public._airbyte_raw_airbyte_playlist_lessons
+    airbyte_playlist_lessons: public._airbyte_raw_airbyte_playlist_lessons
+    airbyte_playlists_ab1: public._airbyte_raw_airbyte_playlists
+    airbyte_playlists_ab2: public._airbyte_raw_airbyte_playlists
+    airbyte_playlists_ab3: public._airbyte_raw_airbyte_playlists
+    airbyte_playlists: public._airbyte_raw_airbyte_playlists
+    airbyte_technologies_ab1: public._airbyte_raw_airbyte_technologies
+    airbyte_technologies_ab2: public._airbyte_raw_airbyte_technologies
+    airbyte_technologies_ab3: public._airbyte_raw_airbyte_technologies
+    airbyte_technologies: public._airbyte_raw_airbyte_technologies
+    airbyte_user_followers_ab1: public._airbyte_raw_airbyte_user_followers
+    airbyte_user_followers_ab2: public._airbyte_raw_airbyte_user_followers
+    airbyte_user_followers_ab3: public._airbyte_raw_airbyte_user_followers
+    airbyte_user_followers: public._airbyte_raw_airbyte_user_followers
+    airbyte_user_technologies_ab1: public._airbyte_raw_airbyte_user_technologies
+    airbyte_user_technologies_ab2: public._airbyte_raw_airbyte_user_technologies
+    airbyte_user_technologies_ab3: public._airbyte_raw_airbyte_user_technologies
+    airbyte_user_technologies: public._airbyte_raw_airbyte_user_technologies
     airbyte_users_ab1: public._airbyte_raw_airbyte_users
     airbyte_users_ab2: public._airbyte_raw_airbyte_users
     airbyte_users_ab3: public._airbyte_raw_airbyte_users
-    creators: public._airbyte_raw_airbyte_plans
+    airbyte_users: public._airbyte_raw_airbyte_users
+    creators: public._airbyte_raw_airbyte_users
+    members: public._airbyte_raw_airbyte_users

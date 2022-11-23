@@ -1,0 +1,26 @@
+{{ config(
+    indexes = [{'columns':['_airbyte_emitted_at'],'type':'btree'}],
+    unique_key = '_airbyte_ab_id',
+    schema = "public",
+    tags = [ "top-level" ]
+) }}
+-- Final base SQL model
+-- depends_on: {{ ref('airbyte_technologies_ab3') }}
+select
+    {{ adapter.quote('id') }},
+    {{ adapter.quote('name') }},
+    slug,
+    image,
+    parent_id,
+    created_at,
+    selectable,
+    updated_at,
+    _airbyte_ab_id,
+    _airbyte_emitted_at,
+    {{ current_timestamp() }} as _airbyte_normalized_at,
+    _airbyte_airbyte_technologies_hashid
+from {{ ref('airbyte_technologies_ab3') }}
+-- airbyte_technologies from {{ source('public', '_airbyte_raw_airbyte_technologies') }}
+where 1 = 1
+{{ incremental_clause('_airbyte_emitted_at', this) }}
+
