@@ -6,8 +6,8 @@
 ) }}
 
 
-WITH creator_feedback_status AS (
-  SELECT * FROM {{ ref('airbyte_creator_feedback_status_ab3') }}
+WITH creator_feedbacks AS (
+  SELECT * FROM {{ ref('airbyte_creator_feedbacks_ab3') }}
 )
 
 SELECT
