@@ -17,7 +17,7 @@ SELECT
     image as image_url,
     concat('https://xesque.rocketseat.dev/platform/tech/', image) as image_url,
     created_at,
-    updated_at
+    updated_at,
     gen_random_uuid() as _airbyte_ab_id,
     {{ current_timestamp() }} as _airbyte_emitted_at,
     {{ current_timestamp() }} as _airbyte_normalized_at,

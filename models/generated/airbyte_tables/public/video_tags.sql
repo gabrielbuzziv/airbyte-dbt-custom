@@ -15,7 +15,7 @@ SELECT
     {{ adapter.quote('name') }} as title,
     slug,
     created_at,
-    updated_at
+    updated_at,
     gen_random_uuid() as _airbyte_ab_id,
     {{ current_timestamp() }} as _airbyte_emitted_at,
     {{ current_timestamp() }} as _airbyte_normalized_at,
