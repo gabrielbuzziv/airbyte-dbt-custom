@@ -12,7 +12,7 @@ SELECT
     created_at,
     updated_at,
     gen_random_uuid() as _airbyte_ab_id,
-    _airbyte_emitted_at,
+    {{ current_timestamp() }} as _airbyte_emitted_at,
     {{ current_timestamp() }} as _airbyte_normalized_at,
     gen_random_uuid() as _airbyte_members_hashid
 FROM {{ ref('airbyte_users_ab3') }}
