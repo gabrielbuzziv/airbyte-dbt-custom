@@ -58,5 +58,5 @@ WHERE
     AND plan_id = '77053ad2-b904-48bc-921f-decc7ee82638'
     AND ps.canceled is false
     AND ps.active is true
-    AND ps.ends_at > now();
+    AND ps.ends_at > now()
 
