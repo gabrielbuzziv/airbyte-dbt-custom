@@ -7,7 +7,7 @@
 
 
 WITH lesson_history AS (
-  SELECT * FROM {{ ref('airbyte_users_ab3') }}
+  SELECT * FROM {{ ref('airbyte_lesson_history_ab3') }}
 )
 
 SELECT 
