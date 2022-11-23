@@ -31,10 +31,6 @@ models:
       airbyte_ctes:
         +tags: airbyte_internal_cte
         +materialized: ephemeral
-      airbyte_incremental:
-        +tags: incremental_tables
-        +materialized: incremental
-        +on_schema_change: sync_all_columns
       airbyte_tables:
         +tags: normalized_tables
         +materialized: table
@@ -133,5 +129,3 @@ vars:
     airbyte_users_ab2: public._airbyte_raw_airbyte_users
     airbyte_users_ab3: public._airbyte_raw_airbyte_users
     airbyte_users: public._airbyte_raw_airbyte_users
-    creators: public._airbyte_raw_airbyte_users
-    members: public._airbyte_raw_airbyte_users
