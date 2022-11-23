@@ -14,7 +14,6 @@ SELECT
     {{ adapter.quote('id') }},
     {{ adapter.quote('name') }},
     slug,
-    image as image_url,
     concat('https://xesque.rocketseat.dev/platform/tech/', image) as image_url,
     created_at,
     updated_at,
