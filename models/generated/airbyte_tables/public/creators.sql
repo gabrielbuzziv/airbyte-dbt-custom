@@ -25,13 +25,13 @@ plan_subscriptions AS (
     plan_id,
     canceled,
     active,
-    ends_at,
+    ends_at
   FROM {{ ref('airbyte_plan_subscriptions_ab3') }}
 ),
 plans AS (
   SELECT
     {{ adapter.quote('id') }},
-    {{ adapter.quote('type') }},
+    {{ adapter.quote('type') }}
   FROM {{ ref('airbyte_plans_ab3') }}
 )
 
