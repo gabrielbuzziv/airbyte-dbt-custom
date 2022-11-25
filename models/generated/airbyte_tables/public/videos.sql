@@ -21,7 +21,10 @@ SELECT
     lh.is_free,
     lh.unlisted as is_listed,
     lh.is_searchable,
-    lh.release_at as released_at,
+    CASE
+        WHEN lh.release_at IS NULL THEN lh.created_at
+        ELSE lg.release_at
+    END as released_at,
     lh.created_at,
     lh.updated_at,
     gen_random_uuid() as _airbyte_ab_id,
