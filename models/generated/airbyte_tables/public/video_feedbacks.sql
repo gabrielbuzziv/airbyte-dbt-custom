@@ -19,6 +19,13 @@ SELECT
     lhfs.lesson_history_id as video_id,
     lhfs.user_id as member_id,
     lhfs.stars as reaction,
+    CASE
+        WHEN lhfs.stars = 5 THEN 'VERY_GOOD'
+        WHEN lhfs.stars = 4 THEN 'GOOD'
+        WHEN lhfs.stars = 2 THEN 'BAD'
+        WHEN lhfs.stars = 1 THEN 'TOO_BAD'
+        ELSE 'REGULAR'
+    END as reaction
     lhfs.time,
     lhf.additional_information as comment,
     CASE
