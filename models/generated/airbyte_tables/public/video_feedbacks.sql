@@ -21,6 +21,14 @@ SELECT
     lhfs.stars as reaction,
     lhfs.time,
     lhf.additional_information as comment,
+    CASE
+      WHEN lhfs.created_at IS NULL THEN now()
+      ELSE lhfs.created_at
+    END as created_at,
+    CASE
+      WHEN lhfs.updated_at IS NULL THEN now()
+      ELSE lhfs.updated_at
+    END as updated_at,
     gen_random_uuid() as _airbyte_ab_id,
     {{ current_timestamp() }} as _airbyte_emitted_at,
     {{ current_timestamp() }} as _airbyte_normalized_at,
