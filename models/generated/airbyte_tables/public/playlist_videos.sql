@@ -17,8 +17,14 @@ SELECT
     lll.lesson_list_id as playlist_id,
     lh.id as video_id,
     lll."order",
-    lll.created_at,
-    lll.updated_at,
+    CASE
+      WHEN lll.created_at IS NULL THEN now()
+      ELSE lll.created_at
+    END as created_at,
+    CASE
+      WHEN lll.updated_at IS NULL THEN now()
+      ELSE lll.updated_at
+    END as updated_at,
     gen_random_uuid() as _airbyte_ab_id,
     {{ current_timestamp() }} as _airbyte_emitted_at,
     {{ current_timestamp() }} as _airbyte_normalized_at,
