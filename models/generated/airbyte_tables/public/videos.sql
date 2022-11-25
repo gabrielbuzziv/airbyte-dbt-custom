@@ -21,7 +21,7 @@ SELECT
     lh.is_free,
     lh.unlisted as is_listed,
     lh.is_searchable,
-    lh.released_at,
+    lh.release_at as released_at,
     lh.created_at,
     lh.updated_at,
     gen_random_uuid() as _airbyte_ab_id,
