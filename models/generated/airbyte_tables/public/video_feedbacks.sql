@@ -25,7 +25,7 @@ SELECT
         WHEN lhfs.stars = 2 THEN 'BAD'
         WHEN lhfs.stars = 1 THEN 'TOO_BAD'
         ELSE 'REGULAR'
-    END as reaction
+    END as reaction,
     lhfs.time,
     lhf.additional_information as comment,
     CASE
