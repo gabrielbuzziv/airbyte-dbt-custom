@@ -23,7 +23,7 @@ SELECT
     lh.is_searchable,
     CASE
         WHEN lh.release_at IS NULL THEN lh.created_at
-        ELSE lg.release_at
+        ELSE lh.release_at
     END as released_at,
     lh.created_at,
     lh.updated_at,
