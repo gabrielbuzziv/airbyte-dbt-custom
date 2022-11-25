@@ -18,7 +18,6 @@ SELECT
     lhfs.id,
     lhfs.lesson_history_id as video_id,
     lhfs.user_id as member_id,
-    lhfs.stars as reaction,
     CASE
         WHEN lhfs.stars = 5 THEN 'VERY_GOOD'
         WHEN lhfs.stars = 4 THEN 'GOOD'
