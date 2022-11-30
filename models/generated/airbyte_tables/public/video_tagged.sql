@@ -16,8 +16,14 @@ SELECT
     lht.id, 
     lht.lesson_history_id as video_id, 
     lht.lesson_history_tag_id as tag_id,
-    now() as created_at,
-    now() as updated_at,
+    CASE
+      WHEN lht.created_at IS NULL THEN now()
+      ELSE lht.created_at
+    END as created_at,
+    CASE
+      WHEN lht.updated_at IS NULL THEN now()
+      ELSE lht.updated_at
+    END as updated_at,
     gen_random_uuid() as _airbyte_ab_id,
     {{ current_timestamp() }} as _airbyte_emitted_at,
     {{ current_timestamp() }} as _airbyte_normalized_at,

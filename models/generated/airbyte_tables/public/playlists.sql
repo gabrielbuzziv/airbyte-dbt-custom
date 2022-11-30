@@ -15,8 +15,14 @@ SELECT
     title,
     description,
     slug,
-    created_at,
-    updated_at,
+    CASE
+      WHEN created_at IS NULL THEN now()
+      ELSE created_at
+    END as created_at,
+    CASE
+      WHEN updated_at IS NULL THEN now()
+      ELSE updated_at
+    END as updated_at,
     gen_random_uuid() as _airbyte_ab_id,
     {{ current_timestamp() }} as _airbyte_emitted_at,
     {{ current_timestamp() }} as _airbyte_normalized_at,

@@ -25,8 +25,14 @@ SELECT
         WHEN lh.release_at IS NULL THEN lh.created_at
         ELSE lh.release_at
     END as released_at,
-    lh.created_at,
-    lh.updated_at,
+    CASE
+      WHEN lh.created_at IS NULL THEN now()
+      ELSE lh.created_at
+    END as created_at,
+    CASE
+      WHEN lh.updated_at IS NULL THEN now()
+      ELSE lh.updated_at
+    END as updated_at,
     gen_random_uuid() as _airbyte_ab_id,
     {{ current_timestamp() }} as _airbyte_emitted_at,
     {{ current_timestamp() }} as _airbyte_normalized_at,

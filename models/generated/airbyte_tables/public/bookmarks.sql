@@ -18,9 +18,14 @@ SELECT
     pl.id,
     lh.id as video_id,
     p.user_id as member_id,
-    now() as created_at,
-    now() as updated_at,
-    null as deleted_at,
+    CASE
+      WHEN p.created_at IS NULL THEN now()
+      ELSE p.created_at
+    END as created_at,
+    CASE
+      WHEN p.updated_at IS NULL THEN now()
+      ELSE p.updated_at
+    END as updated_at,
     gen_random_uuid() as _airbyte_ab_id,
     {{ current_timestamp() }} as _airbyte_emitted_at,
     {{ current_timestamp() }} as _airbyte_normalized_at,
@@ -30,5 +35,3 @@ INNER JOIN playlist_lessons pl ON p.id = pl.playlist_id
 INNER JOIN lesson_history lh ON pl.lesson_id = lh.lesson_id
 WHERE
     p.slug = 'minha-lista'
-    AND lh.default_experts_content = true
-    AND lh.is_expert_content = true

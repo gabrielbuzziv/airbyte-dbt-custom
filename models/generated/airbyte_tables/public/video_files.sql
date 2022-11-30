@@ -17,8 +17,14 @@ SELECT
     ld.lesson_history_id as video_id,
     ld.title,
     concat('https://xesque.rocketseat.dev/platform/', file ) as file,
-    ld.created_at,
-    ld.updated_at,
+    CASE
+      WHEN ld.created_at IS NULL THEN now()
+      ELSE ld.created_at
+    END as created_at,
+    CASE
+      WHEN ld.updated_at IS NULL THEN now()
+      ELSE ld.updated_at
+    END as updated_at,
     gen_random_uuid() as _airbyte_ab_id,
     {{ current_timestamp() }} as _airbyte_emitted_at,
     {{ current_timestamp() }} as _airbyte_normalized_at,

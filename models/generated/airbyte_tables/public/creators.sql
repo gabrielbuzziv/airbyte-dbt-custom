@@ -40,12 +40,21 @@ SELECT
     u.id as atlas_user_id,
     u.name,
     u.slug,
-    CONCAT('https://xesque.rocketseat.dev/users/avatar/', u.avatar) as avatar_url,
+    CASE
+      WHEN u.avatar IS NULL then u.avatar
+      ELSE CONCAT('https://xesque.rocketseat.dev/users/avatar/', u.avatar)
+    END as avatar_url,
     u.company_name as company,
     u.occupation,
     u.about,
-    u.created_at,
-    u.updated_at,
+    CASE
+      WHEN created_at IS NULL THEN now()
+      ELSE created_at
+    END as created_at,
+    CASE
+      WHEN updated_at IS NULL THEN now()
+      ELSE updated_at
+    END as updated_at,
     gen_random_uuid() as _airbyte_ab_id,
     {{ current_timestamp() }} as _airbyte_emitted_at,
     {{ current_timestamp() }} as _airbyte_normalized_at,

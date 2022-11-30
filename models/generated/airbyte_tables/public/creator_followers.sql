@@ -20,8 +20,14 @@ SELECT
     uf.id,
     uf.followed_id as member_id,
     uf.follower_id as creator_id,
-    uf.created_at,
-    uf.updated_at,
+    CASE
+      WHEN uf.created_at IS NULL THEN now()
+      ELSE uf.created_at
+    END as created_at,
+    CASE
+      WHEN uf.updated_at IS NULL THEN now()
+      ELSE uf.updated_at
+    END as updated_at,
     null as deleted_at,
     gen_random_uuid() as _airbyte_ab_id,
     {{ current_timestamp() }} as _airbyte_emitted_at,
