@@ -41,8 +41,8 @@ SELECT
     u.name,
     u.slug,
     CASE
-      WHEN u.avatar IS NULL then u.avatar
-      ELSE CONCAT('https://xesque.rocketseat.dev/users/avatar/', u.avatar)
+      WHEN u.avatar ILIKE 'profile%' then CONCAT('https://xesque.rocketseat.dev/users/avatar/', u.avatar)
+      ELSE u.avatar
     END as avatar_url,
     u.company_name as company,
     u.occupation,
