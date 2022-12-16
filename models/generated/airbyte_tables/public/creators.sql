@@ -48,12 +48,12 @@ SELECT
     u.occupation,
     u.about,
     CASE
-      WHEN created_at IS NULL THEN now()
-      ELSE created_at
+      WHEN u.created_at IS NULL THEN now()
+      ELSE u.created_at
     END as created_at,
     CASE
-      WHEN updated_at IS NULL THEN now()
-      ELSE updated_at
+      WHEN u.updated_at IS NULL THEN now()
+      ELSE u.updated_at
     END as updated_at,
     gen_random_uuid() as _airbyte_ab_id,
     {{ current_timestamp() }} as _airbyte_emitted_at,
@@ -68,6 +68,8 @@ WHERE
     AND ps.canceled is false
     AND ps.active is true
     AND ps.ends_at > now()
+    AND u.slug IS NOT NULL
+    AND u.name IS NOT NULL
 
 UNION
 

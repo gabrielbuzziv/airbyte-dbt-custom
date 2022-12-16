@@ -22,6 +22,7 @@ SELECT
     lh.unlisted as is_listed,
     lh.is_searchable,
     CASE
+        WHEN lh.release_at IS NULL AND lh.created_at IS NULL THEN now()
         WHEN lh.release_at IS NULL THEN lh.created_at
         ELSE lh.release_at
     END as released_at,
